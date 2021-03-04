@@ -1,0 +1,18 @@
+<h2>Children's Books</h2>
+<ul class="books">
+  <li
+    *ngFor="let book of books"
+    [class.selected]="book === selectedBook"
+    (click)="onSelect(book)"
+  >
+    <span class="badge">{{book.author}}</span> {{book.title}}
+  </li>
+</ul>
+
+<div *ngIf="selectedBook">
+  <h2>{{selectedBook.title}} Details</h2>
+  <div><span>Author: </span>{{selectedBook.author}}</div>
+  <div>
+    <br/>
+    <div><span>Description: </span> <br/> {{selectedBook.about}}</div>
+</div>
